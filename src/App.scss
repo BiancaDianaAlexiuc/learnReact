@@ -1,0 +1,129 @@
+.App {
+  padding: 45px 90px;
+}
+
+.App-logo {
+  pointer-events: none;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// TABS - latter to think of another solution
+
+.c-tabs {
+  &__wrapper {
+    background: #ffffff;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+  }
+
+  &__tab {
+    font-family: "Mulish" !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    text-transform: capitalize !important;
+    color: #bdbdbd !important;
+
+    &.Mui-selected {
+      color: #333333 !important;
+    }
+  }
+}
+
+// STAYS WRAPPER
+
+.c-stays {
+  &__wrapper {
+    font-family: "Montserrat", sans-serif;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 29px;
+      color: #333333;
+    }
+
+    &-number {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: #4f4f4f;
+    }
+  }
+}
+
+// CARD
+.c-card {
+  &__stay {
+    max-width: 395px !important;
+    width: 100%;
+    box-shadow: unset !important;
+    background: transparent;
+
+    .title {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      color: #333333;
+    }
+  }
+
+  &__img {
+    min-height: 269px;
+    border-radius: 24px;
+  }
+
+  &__desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Montserrat";
+
+    .super-host {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: #4f4f4f;
+      border: 1px solid #4f4f4f;
+      height: 28px;
+    }
+
+    .type {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: #828282;
+    }
+
+    .rating {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: #4f4f4f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
