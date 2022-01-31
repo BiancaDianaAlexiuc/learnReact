@@ -119,13 +119,13 @@ function FilterDrawer() {
             <div className="adults">
                 <p className="title">Adults</p>
                 <p className="subtitle">Ages 13 or above</p>
-                <Counter />
+                <Counter  />
             </div>
 
             <div className="children">
                 <p className="title">Children</p>
                 <p className="subtitle">Ages 2-12</p>
-                 <Counter />
+                 <Counter  />
             </div>
 
           </div>
