@@ -39,10 +39,8 @@ TabPanel.propTypes = {
 
 function FilterDrawer() {
   const [value, setValue] = React.useState(0);
-
   const [location, setLocation] = React.useState('Location city');
   // const [totalCount, setTotalCount] = React.useState(0);
-
 
   const handleLocationClick = (el) => {
     setLocation(el.target.dataset.location);
@@ -53,7 +51,7 @@ function FilterDrawer() {
   };
 
   // const handleTotalCount = (el) => {
-  //   console.log('total ammount', el.target.dataset.value)
+  //   console.log('total amount', el.target.dataset.value)
   //   setTotalCount(el.target.dataset.value);
   // }
 
@@ -88,7 +86,7 @@ function FilterDrawer() {
                 <div className="label-wrapper">
                     <span style={{ fontWeight: 800, fontSize: "9px" }}>GUESTS</span>
                     <p style={{ fontSize: "14px", fontWeight: 400, margin: 0, lineHeight: "18px" }}>
-                      Add guests
+                      Add guests 
                     </p>
                 </div>
               </React.Fragment>
@@ -98,7 +96,7 @@ function FilterDrawer() {
             className="c-filter__tab c-filter__tab--search"
             label={
             <React.Fragment>
-                <span  className="search-element">
+                <span className="search-element">
                     <SearchIcon sx={{ color: "#F2F2F2", paddingRight: '5px' }} /> 
                     Search 
                  </span>

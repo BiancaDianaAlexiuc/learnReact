@@ -7,14 +7,12 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Chip from "@mui/material/Chip";
 import Grid from "@mui/material/Grid";
-
-// DATA
-import stays from "../data/stays.json";
+;
 
 
-const cardData = stays.map((el) => {
+const CardData = ({el}) => {
   return (
-    <Grid key={el.id} item xs={12} md={6} lg={4}>
+    <Grid item xs={12} md={6} lg={4}>
       <Card className="c-card__stay" sx={{ maxWidth: 345 }}>
         <CardMedia
           className="c-card__img"
@@ -40,6 +38,7 @@ const cardData = stays.map((el) => {
       </Card>
     </Grid>
   );
-});
+}
 
-export default cardData;
+
+export default CardData;

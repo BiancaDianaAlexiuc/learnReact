@@ -13,7 +13,9 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 
 // DATA
-import cardData from './components/Card';
+import CardData from './components/Card';
+
+import stays from "./data/stays.json";
 
 
 
@@ -27,7 +29,7 @@ function App() {
           <p className="c-stays__header-number">12+</p>
         </div>
         <Grid container spacing={4}>
-          {cardData}
+          { stays.map((item) =>  <CardData el={item} key={item.id} /> )}
         </Grid>
       </div>
     </Container>
