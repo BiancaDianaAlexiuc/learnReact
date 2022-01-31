@@ -7,8 +7,7 @@ import SearchIcon from "@mui/icons-material/Search";
 
 //COMPONENTS
 import LocationList from "./LocationList";
-
-
+import Counter from './Counter';
 
 
 function TabPanel(props) {
@@ -37,27 +36,26 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
 
 function FilterDrawer() {
   const [value, setValue] = React.useState(0);
 
   const [location, setLocation] = React.useState('Location city');
+  // const [totalCount, setTotalCount] = React.useState(0);
 
-    const handleLocationClick = (el) => {
-        console.log('selected', el.target.dataset.location);
-        setLocation(el.target.dataset.location);
-    }
 
+  const handleLocationClick = (el) => {
+    setLocation(el.target.dataset.location);
+  }
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  // const handleTotalCount = (el) => {
+  //   console.log('total ammount', el.target.dataset.value)
+  //   setTotalCount(el.target.dataset.value);
+  // }
 
   return (
     <Box className="c-filter__wrapper">
@@ -81,7 +79,6 @@ function FilterDrawer() {
                 </div>
               </React.Fragment>
             }
-            {...a11yProps(0)}
           />
           <Tab
             className="c-filter__tab"
@@ -90,11 +87,12 @@ function FilterDrawer() {
             <React.Fragment>
                 <div className="label-wrapper">
                     <span style={{ fontWeight: 800, fontSize: "9px" }}>GUESTS</span>
-                    <p style={{ fontSize: "14px", fontWeight: 400, margin: 0, lineHeight: "18px" }}>Add guest</p>
+                    <p style={{ fontSize: "14px", fontWeight: 400, margin: 0, lineHeight: "18px" }}>
+                      Add guests
+                    </p>
                 </div>
               </React.Fragment>
             }
-            {...a11yProps(1)}
           />
           <Tab
             className="c-filter__tab c-filter__tab--search"
@@ -106,7 +104,6 @@ function FilterDrawer() {
                  </span>
             </React.Fragment>
             }
-            {...a11yProps(2)}
           />
         </Tabs>
       </Box>
@@ -114,9 +111,7 @@ function FilterDrawer() {
       <TabPanel className="c-filter__panel" value={value} index={0}>
         <ul className="c-filter__location-list">
             <LocationList onClick={handleLocationClick} />
-
         </ul>
-
       </TabPanel>
 
       <TabPanel className="c-filter__panel" value={value} index={1}>
@@ -124,21 +119,13 @@ function FilterDrawer() {
             <div className="adults">
                 <p className="title">Adults</p>
                 <p className="subtitle">Ages 13 or above</p>
-                <div className="counter">
-                    <span className="minus">-</span>
-                    <span className="value">0</span>
-                    <span className="plus">+</span>
-                </div>
+                <Counter />
             </div>
 
             <div className="children">
                 <p className="title">Children</p>
                 <p className="subtitle">Ages 2-12</p>
-                <div className="counter">
-                    <span className="minus">-</span>
-                    <span className="value">0</span>
-                    <span className="plus">+</span>
-                </div>
+                 <Counter />
             </div>
 
           </div>
