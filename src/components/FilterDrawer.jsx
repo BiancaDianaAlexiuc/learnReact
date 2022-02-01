@@ -30,13 +30,14 @@ const TabPanel = ({ children, value, index, ...other }) => {
 
 const FilterDrawer = () => {
   const [value, setValue] = React.useState(0);
-  const [location, setLocation] = React.useState("Location city");
+  const [city, setCity] = React.useState("City");
+  const [country, setCountry] = React.useState("Country");
   const [adultCount, setAdultsCount] = React.useState(0);
   const [childCount, setChildCount] = React.useState(0);
 
   const handleLocationClick = (el) => {
-    console.log("here i am");
-    setLocation(el.target.dataset.location);
+    setCity(el.target.dataset.city);
+    setCountry(el.target.dataset.country);
   };
 
   const handleChange = (event, newValue) => {
@@ -67,6 +68,10 @@ const FilterDrawer = () => {
     }
   };
 
+  const handleSearchClick = () => {
+    console.log(city, country, childCount, adultCount);
+  };
+
   return (
     <Box className="c-filter__wrapper">
       <Box className="c-filter__tabs" sx={{ display: "flex" }}>
@@ -93,7 +98,7 @@ const FilterDrawer = () => {
                       lineHeight: "18px",
                     }}
                   >
-                    {location}
+                    {`${city}, ${country}`}
                   </p>
                 </div>
               </React.Fragment>
@@ -125,6 +130,7 @@ const FilterDrawer = () => {
         </Tabs>
         <div className="c-filter__tab c-filter__tab--search">
           <Button
+            onClick={handleSearchClick}
             className="search-element"
             startIcon={
               <SearchIcon sx={{ color: "#F2F2F2", paddingRight: "5px" }} />
