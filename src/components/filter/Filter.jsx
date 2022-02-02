@@ -8,11 +8,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import Button from "@mui/material/Button";
 
 //COMPONENTS
-import LocationList from "./LocationList";
-import Counter from "./Counter";
+import LocationList from "../locations/LocationList";
+import Counter from "../counter/Counter";
 
 // DATA
-import stays from "../data/stays.json";
+import stays from "../../data/stays.json";
 
 const TabPanel = ({ children, value, index, ...other }) => {
   return (
@@ -28,50 +28,20 @@ const TabPanel = ({ children, value, index, ...other }) => {
   );
 };
 
-const FilterDrawer = () => {
-  const [value, setValue] = React.useState(0);
-  const [city, setCity] = React.useState("City");
-  const [country, setCountry] = React.useState("Country");
-  const [adultCount, setAdultsCount] = React.useState(0);
-  const [childCount, setChildCount] = React.useState(0);
-
-  const handleLocationClick = (el) => {
-    setCity(el.target.dataset.city);
-    setCountry(el.target.dataset.country);
-  };
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const incrementAdultCount = () => {
-    setAdultsCount((prevCount) => prevCount + 1);
-  };
-
-  const incrementChildCount = () => {
-    setChildCount((prevCount) => prevCount + 1);
-  };
-
-  const decrementAdultCount = () => {
-    if (adultCount <= 0) {
-      return;
-    } else {
-      setAdultsCount(adultCount - 1);
-    }
-  };
-
-  const decrementChildCount = () => {
-    if (childCount <= 0) {
-      return;
-    } else {
-      setChildCount(childCount - 1);
-    }
-  };
-
-  const handleSearchClick = () => {
-    console.log(city, country, childCount, adultCount);
-  };
-
+const Filter = ({
+  value,
+  handleChange,
+  city,
+  country,
+  adultCount,
+  childCount,
+  handleSearchClick,
+  handleLocationClick,
+  incrementAdultCount,
+  decrementAdultCount,
+  incrementChildCount,
+  decrementChildCount,
+}) => {
   return (
     <Box className="c-filter__wrapper">
       <Box className="c-filter__tabs" sx={{ display: "flex" }}>
@@ -182,4 +152,4 @@ const FilterDrawer = () => {
   );
 };
 
-export default FilterDrawer;
+export default Filter;
